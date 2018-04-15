@@ -77,24 +77,12 @@ public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreat
 
     @Override
     public void onItemTemplatesCreated() {
-        if (wagons) {
             WagonFactory.addAllWagons();
-        }
-        if (sailingBoats) {
             SailingBoatFactory.addAllSailingBoats();
-        }
-        if (cogs) {
             CogFactory.addAllCogs();
-        }
-        if (caravels) {
             CaravelFactory.addAllCaravels();
-        }
-        if (knarrs) {
             KnarrFactory.addAllKnarrs();
-        }
-        if (corbitas) {
             CorbitaFactory.addAllCorbitas();
-        }
     }
 
 	@Override
