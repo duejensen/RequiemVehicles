@@ -2,6 +2,7 @@ package org.requiem.mods.vehicles;
 
 import org.gotti.wurmunlimited.modloader.interfaces.Configurable;
 import org.gotti.wurmunlimited.modloader.interfaces.ItemTemplatesCreatedListener;
+import org.gotti.wurmunlimited.modloader.interfaces.ServerStartedListener;
 import org.gotti.wurmunlimited.modloader.interfaces.WurmServerMod;
 import org.gotti.wurmunlimited.modsupport.vehicles.ModVehicleBehaviours;
 import org.requiem.mods.vehicles.items.factories.*;
@@ -9,7 +10,7 @@ import org.requiem.mods.vehicles.items.factories.*;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreatedListener {
+public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreatedListener, ServerStartedListener {
 
     private boolean wagons;
     private boolean sailingBoats;
@@ -95,4 +96,27 @@ public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreat
             CorbitaFactory.addAllCorbitas();
         }
     }
+
+	@Override
+	public void onServerStarted() {
+	    if (wagons) {
+            WagonFactory.createCreationEntries();
+        }
+        if (sailingBoats) {
+            SailingBoatFactory.createCreationEntries();
+        }
+        if (cogs) {
+            CogFactory.createCreationEntries();
+        }
+        if (caravels) {
+            CaravelFactory.createCreationEntries();
+        }
+        if (knarrs) {
+            KnarrFactory.createCreationEntries();
+        }
+        if (corbitas) {
+            CorbitaFactory.createCreationEntries();
+        }
+		
+	}
 }

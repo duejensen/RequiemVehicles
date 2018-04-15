@@ -80,14 +80,13 @@ public class Corbitas {
         builder.containerSize(210, 550, 740);
         //builder.setSecondaryItem("sail");
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
-
+   
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newCorbita) {
+    public static void createCreationEntry(int templateId) {
         final AdvancedCreationEntry lCorbita = CreationEntryCreator.createAdvancedEntry(
-                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, newCorbita.getTemplateId(),
+                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, templateId,
                 false, false, 0.0f, true, true, CreationCategories.SHIPS);
         lCorbita.addRequirement(new CreationRequirement(1, ItemList.keelPart, 2, true));
         lCorbita.addRequirement(new CreationRequirement(2, ItemList.stern, 1, true));

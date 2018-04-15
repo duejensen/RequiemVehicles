@@ -14,6 +14,7 @@ import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.requiem.mods.vehicles.Constants;
 import org.requiem.mods.vehicles.Vehicles;
 import org.requiem.mods.vehicles.items.Caravels;
+import org.requiem.mods.vehicles.items.Cogs;
 import org.requiem.mods.vehicles.util.VehicleFacadeImpl;
 
 import java.util.ArrayList;
@@ -33,7 +34,12 @@ public class CaravelFactory {
             }
         }
     }
-
+    public static void createCreationEntries() {
+    	for (int id: caravelList) {
+    		Caravels.createCreationEntry(id);
+    	}
+    }
+    
     public static void registerCaravelManageHook() {
         try {
             CtClass[] input = {

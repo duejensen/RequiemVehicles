@@ -14,6 +14,7 @@ import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.requiem.mods.vehicles.Constants;
 import org.requiem.mods.vehicles.Vehicles;
 import org.requiem.mods.vehicles.items.Knarrs;
+import org.requiem.mods.vehicles.items.SailingBoats;
 import org.requiem.mods.vehicles.util.VehicleFacadeImpl;
 
 import java.util.ArrayList;
@@ -34,6 +35,12 @@ public class KnarrFactory {
         }
     }
 
+    public static void createCreationEntries() {
+    	for (int id: knarrList) {
+    		Knarrs.createCreationEntry(id);
+    	}
+    }
+    
     public static void registerKnarrManageHook() {
         try {
             CtClass[] input = {

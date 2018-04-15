@@ -14,6 +14,7 @@ import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.requiem.mods.vehicles.Constants;
 import org.requiem.mods.vehicles.Vehicles;
 import org.requiem.mods.vehicles.items.SailingBoats;
+import org.requiem.mods.vehicles.items.Wagons;
 import org.requiem.mods.vehicles.util.VehicleFacadeImpl;
 
 import java.util.ArrayList;
@@ -32,6 +33,12 @@ public class SailingBoatFactory {
                 Vehicles.debug(Constants.SAILING_BOAT_NAMES[i] + " boat - cant' be created, id is 0");
             }
         }
+    }
+
+    public static void createCreationEntries() {
+    	for (int id: sailingBoatList) {
+    		SailingBoats.createCreationEntry(id);
+    	}
     }
 
     public static void registerSailingBoatManageHook() {

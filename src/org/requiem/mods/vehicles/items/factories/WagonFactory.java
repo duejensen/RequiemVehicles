@@ -36,6 +36,12 @@ public class WagonFactory {
         }
     }
 
+    public static void createCreationEntries() {
+    	for (int id: wagonList) {
+    		Wagons.createCreationEntry(id);
+    	}
+    }
+
     public static void registerWagonManageHook() {
         try {
             CtClass[] input = {
@@ -95,10 +101,11 @@ public class WagonFactory {
                                 else {
                                 	vehfacade.createPassengerSeats(0);
                                 }
-//        TODO                        vehfacade.setPrivateField("pilotName","driver");
+                                vehfacade.setPilotName("driver");
                                 vehfacade.setCreature(false);
                                 vehfacade.setEmbarkString("ride");
-//       TODO                         vehicle.embarksString = "rides";
+                                vehfacade.setEmbarksString("rides");
+                                
                                 vehicle.name = item.getName();
                                 vehicle.setSeatFightMod(0, 0.9f, 0.3f);
                                 vehicle.setSeatOffset(0, 0.0f, 0.0f, 0.0f, 1.453f);
@@ -112,7 +119,7 @@ public class WagonFactory {
                                 vehfacade.setMaxSpeed(1.0f);
                                 vehicle.commandType = 2;
                                 SeatsFacadeImpl seatfacad= new SeatsFacadeImpl();
-//                             
+                         
                                 final Seat[] hitches = { seatfacad.CreateSeat((byte)2),seatfacad.CreateSeat((byte)2),seatfacad.CreateSeat((byte)2),seatfacad.CreateSeat((byte)2) };
                              
                                 hitches[0].offx = -2.0f;

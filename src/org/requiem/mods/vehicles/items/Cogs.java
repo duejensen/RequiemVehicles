@@ -79,14 +79,13 @@ public class Cogs {
         builder.isTraded(true);
         //builder.setSecondaryItem("sail");
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
-
+    
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newCogs) {
+    public static void createCreationEntry(int templateId) {
         final AdvancedCreationEntry lCog = CreationEntryCreator.createAdvancedEntry(
-                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, newCogs.getTemplateId(),
+                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, templateId,
                 false, false, 0.0f, true, true, CreationCategories.SHIPS);
         lCog.addRequirement(new CreationRequirement(1, ItemList.keelPart, 2, true));
         lCog.addRequirement(new CreationRequirement(2, ItemList.stern, 1, true));
