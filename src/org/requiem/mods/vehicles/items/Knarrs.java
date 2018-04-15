@@ -81,14 +81,14 @@ public class Knarrs {
         builder.containerSize(398, 385, 495);
         //builder.setSecondaryItem("sail");
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
+        
 
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newKnarr) {
+    public static void createCreationEntry(int templateId) {
         final AdvancedCreationEntry lKnarr = CreationEntryCreator.createAdvancedEntry
-                (SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, newKnarr.getTemplateId(),
+                (SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, templateId,
                 false, false, 0.0f, true, true, CreationCategories.SHIPS);
         lKnarr.addRequirement(new CreationRequirement(1, ItemList.keelPart, 3, true));
         lKnarr.addRequirement(new CreationRequirement(2, ItemList.stern, 1, true));

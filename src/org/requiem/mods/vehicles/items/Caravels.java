@@ -84,14 +84,13 @@ public class Caravels {
         //builder.setSecondaryItem("sail");
         builder.dyeAmountOverrideGrams((short) 220000);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
-
+       
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newCaravel) {
+    public static void createCreationEntry(int templateId) {
         final AdvancedCreationEntry lCaravel = CreationEntryCreator.createAdvancedEntry(
-                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, newCaravel.getTemplateId(),
+                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, templateId,
                 false, false, 0.0f, true, true, CreationCategories.SHIPS);
         lCaravel.addRequirement(new CreationRequirement(1, ItemList.keelPart, 3, true));
         lCaravel.addRequirement(new CreationRequirement(2, ItemList.stern, 1, true));

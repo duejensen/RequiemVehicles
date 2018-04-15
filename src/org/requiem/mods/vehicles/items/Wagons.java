@@ -88,15 +88,15 @@ public class Wagons {
         builder.containerSize(200,260,400);
         ItemTemplate resultTemplate = builder.build();
         Vehicles.debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
-        createCreationEntry(resultTemplate);
+        
 
         return resultTemplate.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newWwagon) {
+    public static void createCreationEntry(int templateId) {
 
         AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(
-                SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(),
+                SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, templateId,
                 false, false, 0.0F, true, true, 0, 40.0D, CreationCategories.CARTS);
         wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
         wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));

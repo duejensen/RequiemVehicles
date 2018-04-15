@@ -84,14 +84,13 @@ public class SailingBoats {
         //builder.setSecondaryItem("sail");
         builder.dyeAmountOverrideGrams((short) 5000);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
-
+     
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newSailingBoats) {
+    public static void createCreationEntry(int templateId) {
         final AdvancedCreationEntry lSailBoat = CreationEntryCreator.createAdvancedEntry(
-                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, newSailingBoats.getTemplateId(),
+                SkillList.SHIPBUILDING, ItemList.keelPart, ItemList.keelPart, templateId,
                 false, false, 0.0f, true, true, CreationCategories.SHIPS);
         lSailBoat.addRequirement(new CreationRequirement(1, ItemList.keelPart, 1, true));
         lSailBoat.addRequirement(new CreationRequirement(2, ItemList.stern, 1, true));

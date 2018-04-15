@@ -14,6 +14,7 @@ import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.requiem.mods.vehicles.Constants;
 import org.requiem.mods.vehicles.Vehicles;
 import org.requiem.mods.vehicles.items.Corbitas;
+import org.requiem.mods.vehicles.items.Knarrs;
 import org.requiem.mods.vehicles.util.VehicleFacadeImpl;
 
 import java.util.ArrayList;
@@ -32,6 +33,12 @@ public class CorbitaFactory {
                 Vehicles.debug(Constants.BOAT_NAMES[i] + " boat - cant' be created, id is 0");
             }
         }
+    }
+    
+    public static void createCreationEntries() {
+    	for (int id: corbitaList) {
+    		Corbitas.createCreationEntry(id);
+    	}
     }
 
     public static void registerCorbitaManageHook() {
