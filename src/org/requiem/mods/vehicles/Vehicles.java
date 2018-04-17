@@ -24,12 +24,12 @@ public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreat
     @Override
     public void configure(Properties properties) {
 
-        wagons = Boolean.valueOf(properties.getProperty("wagons"));
-        sailingBoats = Boolean.valueOf(properties.getProperty("sailingBoats"));
-        cogs = Boolean.valueOf(properties.getProperty("cogs"));
-        knarrs = Boolean.valueOf(properties.getProperty("knarrs"));
-        caravels = Boolean.valueOf(properties.getProperty("caravels"));
-        corbitas = Boolean.valueOf(properties.getProperty("corbitas"));
+        wagons = Boolean.valueOf(properties.getProperty("wagons", String.valueOf(true)));
+        sailingBoats = Boolean.valueOf(properties.getProperty("sailingBoats", String.valueOf(true)));
+        cogs = Boolean.valueOf(properties.getProperty("cogs", String.valueOf(true)));
+        knarrs = Boolean.valueOf(properties.getProperty("knarrs", String.valueOf(true)));
+        caravels = Boolean.valueOf(properties.getProperty("caravels", String.valueOf(true)));
+        corbitas = Boolean.valueOf(properties.getProperty("corbitas", String.valueOf(true)));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(true)));
 
         debug("Wagons: " + wagons);
@@ -77,24 +77,12 @@ public class Vehicles implements WurmServerMod, Configurable, ItemTemplatesCreat
 
     @Override
     public void onItemTemplatesCreated() {
-        if (wagons) {
             WagonFactory.addAllWagons();
-        }
-        if (sailingBoats) {
             SailingBoatFactory.addAllSailingBoats();
-        }
-        if (cogs) {
             CogFactory.addAllCogs();
-        }
-        if (caravels) {
             CaravelFactory.addAllCaravels();
-        }
-        if (knarrs) {
             KnarrFactory.addAllKnarrs();
-        }
-        if (corbitas) {
             CorbitaFactory.addAllCorbitas();
-        }
     }
 
 	@Override
