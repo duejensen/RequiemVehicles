@@ -64,7 +64,7 @@ public class SailingBoats {
                 ItemTypes.ITEM_TYPE_HASDATA,
                 ItemTypes.ITEM_TYPE_NORENAME,
                 ItemTypes.ITEM_TYPE_NOT_MISSION,
-                ItemTypes.ITEM_TYPE_USES_SPECIFIED_CONTAINER_VOLUME,
+//                ItemTypes.ITEM_TYPE_USES_SPECIFIED_CONTAINER_VOLUME,
                 ItemTypes.ITEM_TYPE_NOWORKPARENT,
         });
         builder.imageNumber((short) 60);

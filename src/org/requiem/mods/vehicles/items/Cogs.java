@@ -24,6 +24,7 @@ public class Cogs {
 //        createItemTemplate(540, "cog", "cogs",
 // "almost full", "somewhat occupied", "half-full", "emptyish",
 // "A sturdy, one-masted merchant ship with a flat bottom.",
+    		    
 // new short[] { 60, 108, 1, 31, 21, 51, 56, 52, 44, 92, 117, 47, 48, 54, 157, 160, 249 },
 // (short)60,
 // (short)41,
@@ -60,7 +61,7 @@ public class Cogs {
                 ItemTypes.ITEM_TYPE_HASDATA,
                 ItemTypes.ITEM_TYPE_NORENAME,
                 ItemTypes.ITEM_TYPE_NOT_MISSION,
-                ItemTypes.ITEM_TYPE_USES_SPECIFIED_CONTAINER_VOLUME,
+//                ItemTypes.ITEM_TYPE_USES_SPECIFIED_CONTAINER_VOLUME,
                 ItemTypes.ITEM_TYPE_NOWORKPARENT,
                 ItemTypes.ITEM_TYPE_SUPPORTS_SECONDARY_COLOR
         });
